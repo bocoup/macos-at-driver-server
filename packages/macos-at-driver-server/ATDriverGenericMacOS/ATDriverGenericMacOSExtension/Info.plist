@@ -16,7 +16,7 @@
 						references in this project:
 
 						- lib/install/macos.js
-						- src/macos/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
+						- packages/macos-at-driver-server/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
 					-->
 					<key>manufacturer</key>
 					<string>BOCU</string>
@@ -29,7 +29,7 @@
 						references in this project:
 
 						- lib/install/macos.js
-						- src/macos/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
+						- packages/macos-at-driver-server/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
 					-->
 					<key>subtype</key>
 					<string>atdg</string>
@@ -42,7 +42,7 @@
 						in this project:
 
 						- lib/install/macos.js
-						- src/macos/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
+						- packages/macos-at-driver-server/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
 					-->
 					<key>type</key>
 					<string>ausp</string>
