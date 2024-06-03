@@ -1,0 +1,17 @@
+{
+  "name": "windows-at-driver-server",
+  "version": "0.0.4",
+  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using Windows",
+  "files": [
+    "Release/AutomationTtsEngine.dll",
+    "Release/MakeVoice.exe",
+    "Release/Vocalizer.exe",
+    "Release/macos"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
