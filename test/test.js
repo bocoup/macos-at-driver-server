@@ -11,7 +11,7 @@ const SOCKET_PATH = {
   darwin: '/usr/local/var/at_driver_generic/driver.socket',
 }[process.platform];
 
-const executable = path.join(__dirname, '..', 'bin', 'at-driver');
+const executable = path.join(__dirname, '..', 'shared', 'bin', 'at-driver');
 const invert = promise =>
   promise.then(
     () => {
