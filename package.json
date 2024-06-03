@@ -7,14 +7,14 @@
     "at-driver": "./bin/at-driver"
   },
   "scripts": {
-    "prettier": "prettier --write lib test",
+    "prettier": "prettier --write shared test",
     "test": "npm run test-style && npm run test-types && npm run test-unit",
-    "test-style": "prettier --check lib test",
+    "test-style": "prettier --check shared test",
     "test-types": "tsc -p tsconfig.json",
     "test-unit": "mocha --ui tdd test/**/*.js"
   },
   "files": [
-    "lib"
+    "shared"
   ],
   "author": "",
   "license": "MIT",
