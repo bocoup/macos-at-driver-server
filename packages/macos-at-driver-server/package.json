@@ -1,0 +1,11 @@
+{
+  "name": "macos-at-driver-server",
+  "version": "0.0.4",
+  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
+  "files": [
+    "ATDriverGenericMacOS"
+  ],
+  "keywords": [],
+  "author": "Bocoup",
+  "license": "MIT"
+}

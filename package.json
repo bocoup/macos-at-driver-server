@@ -14,11 +14,7 @@
     "test-unit": "mocha --ui tdd test/**/*.js"
   },
   "files": [
-    "lib",
-    "Release/AutomationTtsEngine.dll",
-    "Release/MakeVoice.exe",
-    "Release/Vocalizer.exe",
-    "Release/macos"
+    "lib"
   ],
   "author": "",
   "license": "MIT",
