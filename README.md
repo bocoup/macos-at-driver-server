@@ -38,14 +38,14 @@ which is required by the automation voice.
 
 3. Run the install command in a terminal (from inside the project directory):
 
-       ./bin/at-driver install
+       ./shared/bin/at-driver install
 
    If prompted for system administration permission, grant permission.
 
 4. Start the server by executing the following command in a terminal (from
    inside the project directory):
 
-       ./bin/at-driver serve
+       ./shared/bin/at-driver serve
 
    The process will write a message to the standard error stream when the
    WebSocket server is listening for connections. The `--help` flag will cause

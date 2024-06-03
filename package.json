@@ -4,7 +4,7 @@
   "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input ",
   "main": "index.js",
   "bin": {
-    "at-driver": "./bin/at-driver"
+    "at-driver": "./shared/bin/at-driver"
   },
   "scripts": {
     "prettier": "prettier --write shared test",
