@@ -11,6 +11,6 @@
   "author": "Bocoup",
   "license": "MIT",
   "dependencies": {
-    "shared": "workspace:*"
+    "shared": "*"
   }
 }
