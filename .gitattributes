@@ -7,10 +7,10 @@ lib/**/*  text eol=lf
 test/**/* text eol=lf
 
 # Declare files that will always have CRLF line endings on checkout.
-src/automationttsengine/**/* text eol=crlf
-src/makevoice/**/*           text eol=crlf
-src/Shared/**/*              text eol=crlf
-src/Vocalizer/**/*           text eol=crlf
+packages/windows-at-driver-server/automationttsengine/**/* text eol=crlf
+packages/windows-at-driver-server/makevoice/**/*           text eol=crlf
+packages/windows-at-driver-server/Shared/**/*              text eol=crlf
+packages/windows-at-driver-server/Vocalizer/**/*           text eol=crlf
 
 ###############################################################################
 # Set default behavior for command prompt diff.
