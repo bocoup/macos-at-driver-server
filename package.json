@@ -37,6 +37,7 @@
   },
   "workspaces": [
     "packages/windows-at-driver-server",
-    "packages/macos-at-driver-server"
+    "packages/macos-at-driver-server",
+    "shared"
   ]
 }

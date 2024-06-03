@@ -9,5 +9,8 @@
     "Release/macos"
   ],
   "author": "Bocoup",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "shared": "workspace:*"
+  }
 }
