@@ -1,16 +1,21 @@
 {
   "name": "windows-at-driver-server",
   "version": "0.0.4",
-  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using Windows",
-  "files": [
-    "Release/AutomationTtsEngine.dll",
-    "Release/MakeVoice.exe",
-    "Release/Vocalizer.exe",
-    "Release/macos"
-  ],
   "author": "Bocoup",
   "license": "MIT",
-  "dependencies": {
-    "shared": "*"
+  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using Windows",
+  "files": [
+    "AutomationTtsEngine.sln",
+    "automationttsengine",
+    "makevoice",
+    "vocalizer",
+    "shared"
+  ],
+  "bin": {
+    "at-driver": "./shared/bin/at-driver"
+  },
+  "scripts": {
+    "prepack": "cp -r ../../shared ./shared",
+    "postpack": "rm -rf ./shared"
   }
 }
