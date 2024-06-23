@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
   "files": [
-    "ATDriverGenericMacOS"
+    "MacOSATDriverServer"
   ],
   "author": "Bocoup",
   "license": "MIT",
