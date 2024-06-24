@@ -22,7 +22,7 @@ build/
 bld/
 [Oo]bj/
 
-# macOS
+# Xcode Artifacts
 DerivedData/
 
 # Visual Studo 2015 cache/options directory
