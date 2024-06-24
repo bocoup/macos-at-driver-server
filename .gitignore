@@ -22,6 +22,9 @@ build/
 bld/
 [Oo]bj/
 
+# macOS
+DerivedData/
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
