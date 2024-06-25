@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>AudioComponents</key>
+			<array>
+				<dict>
+					<key>description</key>
+					<string>MacOSATDriverServerExtension</string>
+					<!--
+						The "manufacturer" must be kept in-sync with other
+						references in this project:
+
+						- shared/install/macos.js
+						- packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer/Model/AudioUnitHostModel.swift
+					-->
+					<key>manufacturer</key>
+					<string>BOCU</string>
+					<key>name</key>
+					<string>Bocoup LLC: MacOSATDriverServerExtension</string>
+					<key>sandboxSafe</key>
+					<true/>
+					<!--
+						The "subtype" must be kept in-sync with other
+						references in this project:
+
+						- shared/install/macos.js
+						- packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer/Model/AudioUnitHostModel.swift
+					-->
+					<key>subtype</key>
+					<string>atdg</string>
+					<key>tags</key>
+					<array>
+						<string>Speech Synthesizer</string>
+					</array>
+					<!--
+						The "type" must be kept in-sync with other references
+						in this project:
+
+						- shared/install/macos.js
+						- packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer/Model/AudioUnitHostModel.swift
+					-->
+					<key>type</key>
+					<string>ausp</string>
+					<key>version</key>
+					<integer>67072</integer>
+				</dict>
+			</array>
+		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.AudioUnit</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).AudioUnitFactory</string>
+	</dict>
+</dict>
+</plist>
