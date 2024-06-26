@@ -15,7 +15,7 @@
     "at-driver": "./shared/bin/at-driver"
   },
   "scripts": {
-    "prepack": "cp -r ../../shared ./shared",
-    "postpack": "rm -rf ./shared"
+    "prepack": "node ../../scripts/manage-shared.js copy",
+    "postpack": "node ../../scripts/manage-shared.js cleanup"
   }
 }

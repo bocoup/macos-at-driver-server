@@ -17,6 +17,7 @@
     "@types/node": "^20.11.17",
     "@types/ws": "^8.5.10",
     "@types/yargs": "^17.0.32",
+    "fs-extra": "^11.2.0",
     "mocha": "^9.1.2",
     "prettier": "^3.2.4",
     "typescript": "^5.3.3"
