@@ -1,13 +1,18 @@
 {
   "name": "macos-at-driver-server",
   "version": "0.0.4",
-  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
-  "files": [
-    "ATDriverGenericMacOS"
-  ],
   "author": "Bocoup",
   "license": "MIT",
-  "dependencies": {
-    "shared": "*"
+  "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
+  "files": [
+    "MacOSATDriverServer",
+    "shared"
+  ],
+  "bin": {
+    "at-driver": "./shared/bin/at-driver"
+  },
+  "scripts": {
+    "prepack": "node ../../scripts/manage-shared.js copy",
+    "postpack": "node ../../scripts/manage-shared.js cleanup"
   }
 }

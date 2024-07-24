@@ -10,18 +10,18 @@ const { 'interaction.pressKeys': pressKeys } = require('../modules/macos/interac
 
 const LSREGISTER_EXECUTABLE_PATH =
   '/System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister';
-const APPLICATION_NAME = 'ATDriverGenericMacOS.app';
-const EXTENSION_IDENTIFIER = 'com.bocoup.ATDriverGenericMacOS.ATDriverGenericMacOSExtension';
+const APPLICATION_NAME = 'MacOSATDriverServer.app';
+const EXTENSION_IDENTIFIER = 'com.bocoup.MacOSATDriverServer.MacOSATDriverServerExtension';
 const VOICE_IDENTIFIER =
-  'com.bocoup.ATDriverGenericMacOS.ATDriverGenericMacOSExtension.ATDriverGenericMacOSExtension';
+  'com.bocoup.MacOSATDriverServer.MacOSATDriverServerExtension.MacOSATDriverServerExtension';
 const SYSTEM_VOICE_IDENTIFIER = 'com.apple.Fred';
 /**
  * This string comprises three tokens (the "type", "subtype", and
  * "manufacturer" of the Audio Unit) which must be kept in-sync with other
  * references in this project:
  *
- * - packages/macos-at-driver-server/ATDriverGenericMacOS/ATDriverGenericMacOS/Model/AudioUnitHostModel.swift
- * - packages/macos-at-driver-server/ATDriverGenericMacOS/ATDriverGenericMacOSExtension/Info.plist
+ * - packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServer/Model/AudioUnitHostModel.swift
+ * - packages/macos-at-driver-server/MacOSATDriverServer/MacOSATDriverServerExtension/Info.plist
  */
 const PLUGIN_TRIPLET_IDENTIFIER = 'ausp atdg BOCU';
 
@@ -131,7 +131,7 @@ const isInstalled = async function () {
     throw error;
   }
 
-  return /ATDriverGenericMacOSExtension/.test(stdout);
+  return /MacOSATDriverServerExtension/.test(stdout);
 };
 
 /**
