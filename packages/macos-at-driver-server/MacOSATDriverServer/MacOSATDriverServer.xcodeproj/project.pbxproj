@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85420A362C51813A00DE22F5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85420A352C51813A00DE22F5 /* Release.xcconfig */; };
+		85420A372C51813A00DE22F5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85420A352C51813A00DE22F5 /* Release.xcconfig */; };
+		85420A382C51813A00DE22F5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85420A352C51813A00DE22F5 /* Release.xcconfig */; };
+		85420A392C51813A00DE22F5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85420A352C51813A00DE22F5 /* Release.xcconfig */; };
+		85420A3A2C51813A00DE22F5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85420A352C51813A00DE22F5 /* Release.xcconfig */; };
 		AD64B3692B2B995B00AC0234 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64B3682B2B995B00AC0234 /* ContentView.swift */; };
 		AD64B36D2B2B995B00AC0234 /* ViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64B36C2B2B995B00AC0234 /* ViewControllerRepresentable.swift */; };
 		AD64B3702B2B995B00AC0234 /* Synth.aif in Resources */ = {isa = PBXBuildFile; fileRef = AD64B36F2B2B995B00AC0234 /* Synth.aif */; };
@@ -115,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85420A352C51813A00DE22F5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		AD64B3652B2B995B00AC0234 /* MacOSATDriverServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOSATDriverServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD64B3682B2B995B00AC0234 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD64B36C2B2B995B00AC0234 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
@@ -194,6 +200,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85420A2E2C5180D200DE22F5 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				85420A352C51813A00DE22F5 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		AD64B35C2B2B995B00AC0234 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +235,7 @@
 		AD64B3672B2B995B00AC0234 /* MacOSATDriverServer */ = {
 			isa = PBXGroup;
 			children = (
+				85420A2E2C5180D200DE22F5 /* Configurations */,
 				AD64B3682B2B995B00AC0234 /* ContentView.swift */,
 				AD64B3802B2B995B00AC0234 /* MacOSATDriverServerApp.swift */,
 				AD64B3852B2B995C00AC0234 /* Assets.xcassets */,
@@ -542,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85420A362C51813A00DE22F5 /* Release.xcconfig in Resources */,
 				AD64B3842B2B995B00AC0234 /* Preview Assets.xcassets in Resources */,
 				AD64B3862B2B995C00AC0234 /* Assets.xcassets in Resources */,
 				AD64B3702B2B995B00AC0234 /* Synth.aif in Resources */,
@@ -552,6 +568,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85420A372C51813A00DE22F5 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85420A382C51813A00DE22F5 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85420A392C51813A00DE22F5 /* Release.xcconfig in Resources */,
 				AD64B3A82B2B995C00AC0234 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85420A3A2C51813A00DE22F5 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +753,7 @@
 		};
 		AD64B3BE2B2B995C00AC0234 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85420A352C51813A00DE22F5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
