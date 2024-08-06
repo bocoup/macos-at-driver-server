@@ -22,6 +22,14 @@ build/
 bld/
 [Oo]bj/
 
+# Xcode Artifacts
+DerivedData/
+
+# User specific xcode settings
+*.pbxuser
+!default.pbxuser
+*.xcuserdatad/
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
