@@ -5,7 +5,7 @@
   "license": "MIT",
   "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
   "files": [
-    "MacOSATDriverServer",
+    "MacOSATDriverServer/Build/debug",
     "shared"
   ],
   "bin": {
