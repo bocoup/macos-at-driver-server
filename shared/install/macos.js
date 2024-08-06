@@ -139,7 +139,7 @@ const isInstalled = async function () {
  */
 const getExecOptions = async function () {
   return {
-    cwd: resolve(__dirname, '../../Release/macos'),
+    cwd: resolve(__dirname, '../../MacOSATDriverServer/Build/Debug'),
   };
 };
 
