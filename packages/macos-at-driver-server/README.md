@@ -1,6 +1,6 @@
 # MacOS AT Driver Server
 
-An implemented of the AT Driver "remote end" designed to work with screen
+An implementation of the AT Driver "remote end" designed to work with screen
 readers on macOS.
 
 ## Requirements
