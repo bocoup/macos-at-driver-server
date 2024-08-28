@@ -61,7 +61,14 @@ exports.KeyCode = {
   backspace: 51,
   escape: 53,
   command: 55,
+
+  /**
+   * The keycode for shift (57) has been found to be non-functional when
+   * applied in conjunction with "tab" in macOS 13 and 14.
+   * https://github.com/bocoup/at-driver-servers/pull/11
+   */
   shift: 'shift',
+
   option: 58,
   control: 59,
   fn: 63,
