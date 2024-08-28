@@ -17,5 +17,7 @@ module.exports = /** @type {import('yargs').CommandModule} */ ({
       win32: () => require('../install/win32'),
     });
     await installDelegate.install({ unattended });
+
+    console.log('Installation completed successfully.');
   },
 });
