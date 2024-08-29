@@ -88,11 +88,11 @@ suite('helpers/macos/applescript', () => {
             '    tell application "System Events"\n' +
             '        key down 55\n' +
             '        key down 58\n' +
-            '        key down 57\n' +
+            '        key down shift\n' +
             '        key down 11\n' +
             '        \n' +
             '        key up 11\n' +
-            '        key up 57\n' +
+            '        key up shift\n' +
             '        key up 58\n' +
             '        key up 55\n' +
             '    end tell\n' +
