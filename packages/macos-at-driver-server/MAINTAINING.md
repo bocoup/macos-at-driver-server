@@ -9,8 +9,13 @@ copied into place from a shared directory during publication time.
 - macOS version 13 ("Ventura") or later
 - Xcode
 - Node.js version 18 or later
+- a valid GitHub personal access token with Read and Write access to the
+  "Contents" permission
 
 ## Packaging Instructions
 
 1. Build the Xcode project
-2. Run `npm publish`
+2. Execute the following command in a terminal, substituting a valid token
+   value for `token-value`:
+
+       $ GITHUB_API_TOKEN=token-value ./publish.sh`
