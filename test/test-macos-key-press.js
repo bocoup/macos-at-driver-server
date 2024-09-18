@@ -9,6 +9,20 @@
  * The tests operate by opening a web browser, navigating to a page designed to
  * log key presses, simulating key presses, and comparing the events logged by
  * the browser with the expected sequence.
+ *
+ * ## Testing Deficiency #1
+ *
+ * Browsers typically reserve "Control + Tab" to switch between UI tabs. Since
+ * only one UI tab is available in the test environment, this causes the
+ * document to "miss" the "keydown" event for the "tab" key but not the
+ * corresponding "keyup" event.
+ *
+ * ## Testing Deficiency #2
+ *
+ * As of macOS 13.6.9, the "Mission Control" application consumes "Control +
+ * ArrowLeft" (and all other "Control"/arrow-key combinations). Although the
+ * application could be halted in service of these tests, such automation would
+ * be prohibitively disruptive for local development.
  */
 'use strict';
 const assert = require('assert');
@@ -177,12 +191,8 @@ suite('macOS key press simulation', () => {
 
   keyTest('tab', ['tab'], [], ['keydown:Tab', 'keyup:Tab']);
 
-  // In the presence of "Control" (when not paired with "Option"), the browser does not recieve "key down" for "Tab", but it *does* receive the corresponding "key up"
-  test.skip(
-    'tab + control (intuitive behavior)' /*, ['tab'], ['control'], ['keydown:Control', 'keydown:Tab', 'keyup:Tab', 'keyup:Control']*/,
-  );
   keyTest(
-    'tab + control (suspect behavior)',
+    'tab + control (see test source code for "Testing Deficiency #1")',
     ['tab'],
     ['control'],
     ['keydown:Control', 'keyup:Tab', 'keyup:Control'],
@@ -206,12 +216,8 @@ suite('macOS key press simulation', () => {
     ['control', 'option'],
     ['keydown:Control', 'keydown:Alt', 'keydown:Tab', 'keyup:Tab', 'keyup:Alt', 'keyup:Control'],
   );
-  // In the presence of "Control" (when not paired with "Option"), the browser does not recieve "key down" for "Tab", but it *does* receive the corresponding "key up"
-  test.skip(
-    'tab + control + shift (intuitive behavior)' /*, ['tab'], ['control', 'shift'], ['keydown:Control', 'keydown:Shift', 'keydown:Tab', 'keyup:Tab', 'keyup:Shift', 'keyup:Control']*/,
-  );
   keyTest(
-    'tab + control + shift (suspect behavior)',
+    'tab + control + shift (see test source code for "Testing Deficiency #1")',
     ['tab'],
     ['control', 'shift'],
     ['keydown:Control', 'keydown:Shift', 'keyup:Tab', 'keyup:Shift', 'keyup:Control'],
@@ -241,11 +247,8 @@ suite('macOS key press simulation', () => {
 
   keyTest('arrow (left arrow)', ['arrowLeft'], [], ['keydown:ArrowLeft', 'keyup:ArrowLeft']);
 
-  test.skip(
-    'arrow (left arrow) + control (intuitive behavior)' /*, ['arrowLeft'], ['control'], ['keydown:Control', 'keydown:ArrowLeft', 'keyup:ArrowLeft', 'keyup:Control']*/,
-  );
   keyTest(
-    'arrow (left arrow) + control (suspect behavior)',
+    'arrow (left arrow) + control (see test source code for "Testing Deficiency #2")',
     ['arrowLeft'],
     ['control'],
     ['keydown:Control', 'keyup:Control'],
