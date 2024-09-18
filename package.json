@@ -6,9 +6,10 @@
   "scripts": {
     "prettier": "prettier --write shared test",
     "test": "npm run test-style && npm run test-types && npm run test-unit",
+    "test-macos-key-press": "mocha --ui tdd test/test-macos-key-press.js",
     "test-style": "prettier --check shared test",
     "test-types": "tsc -p tsconfig.json",
-    "test-unit": "mocha --ui tdd test/**/*.js"
+    "test-unit": "mocha --ui tdd test/test.js"
   },
   "author": "",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "fs-extra": "^11.2.0",
     "mocha": "^9.1.2",
     "prettier": "^3.2.4",
+    "selenium-webdriver": "^4.1.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {

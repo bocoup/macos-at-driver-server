@@ -14,6 +14,7 @@ jobs:
           - npm run test-style
           - npm run test-types
           - npm run test-unit
+          - npm run test-macos-key-press
         exclude:
           # The `test-style` script is platform-independent, so there is no
           # value in executing it in multiple operating systems.
@@ -23,6 +24,10 @@ jobs:
           # value in executing it in multiple operating systems.
           - os: macos-14
             test-command: npm run test-types
+          # The `test-macos-key-press` script exercises macOS platform code,
+          # making it inappropriate for Windows environments.
+          - os: windows-2022
+            test-command: npm run test-macos-key-press
 
     steps:
       - uses: actions/checkout@v4
