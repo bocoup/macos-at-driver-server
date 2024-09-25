@@ -1,6 +1,6 @@
 {
   "name": "@bocoup/macos-at-driver-server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Bocoup",
   "license": "MIT",
   "description": "A WebSocket server which allows clients to observe the text enunciated by a screen reader and to simulate user input using macOS",
@@ -15,6 +15,13 @@
   "scripts": {
     "prepack": "node ../../scripts/manage-shared.js copy",
     "postpack": "node ../../scripts/manage-shared.js cleanup"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "robotjs": "^0.6.0",
+    "uuid": "^9.0.1",
+    "ws": "^8.2.3",
+    "yargs": "^17.2.1"
   },
   "engines": {
     "node": ">=18.0.0"
