@@ -52,14 +52,23 @@ const INDENT = '    ';
  */
 exports.renderScript = function (command) {
   validateCommand(command);
+
   // Key presses must be scripted as a nested series of "key down"/"key up"
   // commands rather than a linear sequence of "key code" commands because
   // VoiceOver does not recognize key combinations using the latter API (e.g.
   // `key code {123, 124}`).
+
   const renderedKeyCodeLines = [...command.modifiers, ...command.keyCodes]
     .reverse()
-    .map(code => KeyCode[code].toString())
-    .reduce((accum, next) => `key down ${next}\n${accum}\nkey up ${next}`, '')
+    .map(code => {
+      const keyCode = KeyCode[code].toString();
+      // Add delay after shift key press for VoiceOver to properly recognize the modifier
+      if (code === KeyCode.shift) {
+        return { code, down: `key down ${keyCode}\ndelay 0.05`, up: `key up ${keyCode}` };
+      }
+      return { code, down: `key down ${keyCode}`, up: `key up ${keyCode}` };
+    })
+    .reduce((accum, { down, up }) => `${down}\n${accum}\n${up}`, '')
     .split('\n')
     .map(line => `${INDENT}${INDENT}${line}`)
     .join('\n');
