@@ -62,11 +62,12 @@ exports.renderScript = function (command) {
     .reverse()
     .map(code => {
       const keyCode = KeyCode[code].toString();
-      // Add delay after shift key press for VoiceOver to properly recognize the modifier
-      if (code === KeyCode.shift) {
-        return { code, down: `key down ${keyCode}\ndelay 0.05`, up: `key up ${keyCode}` };
-      }
-      return { code, down: `key down ${keyCode}`, up: `key up ${keyCode}` };
+      return {
+        code,
+        // Add delay after shift key press for VoiceOver event resolver to properly recognize the modifier
+        down: code === KeyCode.shift ? `key down ${keyCode}\ndelay 0.05` : `key down ${keyCode}`,
+        up: `key up ${keyCode}`,
+      };
     })
     .reduce((accum, { down, up }) => `${down}\n${accum}\n${up}`, '')
     .split('\n')

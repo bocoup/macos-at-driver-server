@@ -89,6 +89,7 @@ suite('helpers/macos/applescript', () => {
             '        key down 55\n' +
             '        key down 58\n' +
             '        key down shift\n' +
+            '        delay 0.05\n' +
             '        key down 11\n' +
             '        \n' +
             '        key up 11\n' +
