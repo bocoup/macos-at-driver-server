@@ -63,7 +63,6 @@ exports.renderScript = function (command) {
     .map(code => {
       const keyCode = KeyCode[code].toString();
       return {
-        code,
         // Add delay after shift key press for VoiceOver event resolver to properly recognize the modifier
         down: code === KeyCode.shift ? `key down ${keyCode}\ndelay 0.05` : `key down ${keyCode}`,
         up: `key up ${keyCode}`,
