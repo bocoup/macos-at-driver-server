@@ -57,6 +57,7 @@ suite('helpers/macos/applescript', () => {
             '        key down 49\n' +
             '        \n' +
             '        key up 49\n' +
+            '        delay 0.25\n' +
             '    end tell\n' +
             'end timeout',
         ),
@@ -73,7 +74,9 @@ suite('helpers/macos/applescript', () => {
             '        key down 0\n' +
             '        \n' +
             '        key up 0\n' +
+            '        delay 0.25\n' +
             '        key up 58\n' +
+            '        delay 0.25\n' +
             '    end tell\n' +
             'end timeout',
         ),
@@ -93,9 +96,13 @@ suite('helpers/macos/applescript', () => {
             '        key down 11\n' +
             '        \n' +
             '        key up 11\n' +
+            '        delay 0.25\n' +
             '        key up shift\n' +
+            '        delay 0.25\n' +
             '        key up 58\n' +
+            '        delay 0.25\n' +
             '        key up 55\n' +
+            '        delay 0.25\n' +
             '    end tell\n' +
             'end timeout',
         ),
