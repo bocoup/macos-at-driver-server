@@ -22,6 +22,9 @@ const APPLESCRIPT_TIMEOUT = 5;
 /** Error message to look for to determine error is an Applescript time out. */
 const APPLESCRIPT_TIMEOUT_ERROR = (exports.APPLESCRIPT_TIMEOUT_ERROR = 'AppleEvent timed out');
 
+const SHIFT_CHORD_DELAY = 0.05;
+const KEYPRESS_DELAY = 0.25;
+
 exports.KeyboardAction = KeyboardAction;
 
 exports.KeyCode = KeyCode;
@@ -64,11 +67,14 @@ exports.renderScript = function (command) {
       const keyCode = KeyCode[code].toString();
       return {
         // Add delay after shift key press for VoiceOver event resolver to properly recognize the modifier
-        down: code === KeyCode.shift ? `key down ${keyCode}\ndelay 0.05` : `key down ${keyCode}`,
+        down:
+          code === KeyCode.shift
+            ? `key down ${keyCode}\ndelay ${SHIFT_CHORD_DELAY}`
+            : `key down ${keyCode}`,
         up: `key up ${keyCode}`,
       };
     })
-    .reduce((accum, { down, up }) => `${down}\n${accum}\n${up}`, '')
+    .reduce((accum, { down, up }) => `${down}\n${accum}\n${up}\ndelay ${KEYPRESS_DELAY}`, '')
     .split('\n')
     .map(line => `${INDENT}${INDENT}${line}`)
     .join('\n');
