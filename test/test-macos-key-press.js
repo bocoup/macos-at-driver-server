@@ -32,6 +32,9 @@ const { Builder } = require('selenium-webdriver');
 const { renderScript, runScript } = require('../shared/helpers/macos/applescript');
 const { KeyCodeCommandKind } = require('../shared/helpers/macos/keyCodeCommand');
 
+// Allow for longer delays when starting the browsing session when executing
+// these tests in resource-constrained continuous-integration environments.
+const WEBDRIVER_SESSION_TIMEOUT = process.env.CI ? 20 * 1000 : 10 * 1000;
 const documentHTML = `<!DOCTYPE html>
 <html lang="en">
   <body>
@@ -88,7 +91,7 @@ suite('macOS key press simulation', () => {
   const keyTest = keyTestDriverRef.bind(null, () => driver);
 
   suiteSetup(async function () {
-    this.timeout(10 * 1000);
+    this.timeout(WEBDRIVER_SESSION_TIMEOUT);
     driver = await new Builder().forBrowser('firefox').build();
   });
 
