@@ -87,10 +87,17 @@ suite('macOS key press simulation', () => {
   let driver;
   const keyTest = keyTestDriverRef.bind(null, () => driver);
 
-  suiteSetup(async function () {
-    this.timeout(10 * 1000);
+  for (let i = 0; i < 128; ++i) {
+  test('just start Firefox', async function () {
+    this.timeout(30 * 1000);
     driver = await new Builder().forBrowser('firefox').build();
   });
+  }
+  teardown(async () => {
+    driver && await driver.quit();
+    driver = null;
+  });
+  return;
 
   suiteTeardown(async () => {
     await driver.quit();
