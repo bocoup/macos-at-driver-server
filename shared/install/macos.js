@@ -30,12 +30,15 @@ const PLUGIN_TRIPLET_IDENTIFIER = 'ausp atdg BOCU';
  * Execute the "exec" method from the built-in `child_process` module. In the
  * event of failure due to the absence of the specified current working
  * directory, provide a meaningful error description.
+ *
+ * @param {string} command
+ * @param {ExecOptions} [options]
  */
-const exec = async (...args) => {
+const exec = async (command, options) => {
   try {
-    return await promisify(_exec)(...args);
+    return await promisify(_exec)(command, options);
   } catch (error) {
-    const cwd = args[1]?.cwd || process.cwd();
+    const cwd = options?.cwd || process.cwd();
     const cwdExists = !!(await fs.stat(cwd).catch(() => null));
 
     if (error.code === 'ENOENT' && !cwdExists) {
