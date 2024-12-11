@@ -24,7 +24,7 @@ locally (that is, without publishing it for use by others).
    2. With the project open, select `Product>Build` from the top-level menu
 2. Execute the following command in a terminal:
 
-   $ npm pack
+       $ npm pack
 
 ## Publishing
 
@@ -45,4 +45,4 @@ Repository](https://npmjs.org).
    2. With the project open, select `Product>Build` from the top-level menu
 2. Execute the following command in a terminal:
 
-   $ npm publish
+       $ npm publish
