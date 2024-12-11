@@ -39,7 +39,7 @@ const exec = async (...args) => {
     const cwdExists = !!(await fs.stat(cwd).catch(() => null));
 
     if (error.code === 'ENOENT' && !cwdExists) {
-      throw new Error(`Cannot access directory: ${cwd}`, {cause: error});
+      throw new Error(`Cannot access directory: ${cwd}`, { cause: error });
     }
 
     throw error;
