@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "checkJs": true,
-        "noEmit": true
+        "module": "commonjs",
+        "noEmit": true,
+        "target": "es2022"
     },
     "include": ["shared", "test"]
 }
