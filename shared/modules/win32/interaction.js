@@ -69,8 +69,11 @@ const keyboardActionsMap = {
 
 const keycodeMatch = /[\ue000-\ue05d]/;
 
-const pressKeys = /** @type {ATDriverModules.InteractionPressKeys} */ (
-  (websocket, { keys }) => {
+const userIntent = /** @type {ATDriverModules.InteractionUserIntent} */ (
+  (websocket, { name, keys }) => {
+    if (name !== 'pressKeys') {
+      throw new Error('unknown user intent');
+    }
     const robotjsKeys = keys.map(key => {
       if (keyboardActionsMap[key]) return keyboardActionsMap[key];
       if (keycodeMatch.test(key))
@@ -93,5 +96,5 @@ const pressKeys = /** @type {ATDriverModules.InteractionPressKeys} */ (
 );
 
 module.exports = /** @type {ATDriverModules.Interaction} */ ({
-  'interaction.pressKeys': pressKeys,
+  'interaction.userIntent': userIntent,
 });

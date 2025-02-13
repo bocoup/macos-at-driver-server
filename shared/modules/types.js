@@ -24,16 +24,17 @@
 
 /**
  * @typedef ATDriverModules.InteractionPressKeysParameters
+ * @property {"pressKeys"} name
  * @property {ATDriverModules.InteractionPressKeysKeyCombination} keys
  */
 
 /**
- * @typedef {ATDriverModules.Command<ATDriverModules.InteractionPressKeysParameters, {}>} ATDriverModules.InteractionPressKeys
+ * @typedef {ATDriverModules.Command<ATDriverModules.InteractionPressKeysParameters, {}>} ATDriverModules.InteractionUserIntent
  */
 
 /**
  * @typedef {{
- *   "interaction.pressKeys": ATDriverModules.InteractionPressKeys
+ *   "interaction.userIntent": ATDriverModules.InteractionUserIntent
  * }} ATDriverModules.Interaction
  */
 

@@ -7,7 +7,7 @@ const { promisify } = require('util');
 
 const debug = require('debug')('install');
 
-const { 'interaction.pressKeys': pressKeys } = require('../modules/macos/interaction');
+const { 'interaction.userIntent': userIntent } = require('../modules/macos/interaction');
 
 const LSREGISTER_EXECUTABLE_PATH =
   '/System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister';
@@ -134,7 +134,7 @@ exports.uninstall = async function () {
  */
 const canPressKeys = async () => {
   try {
-    await pressKeys(null, { keys: ['shift'] });
+    await userIntent(null, { name: 'pressKeys', keys: ['shift'] });
   } catch ({}) {
     return false;
   }
