@@ -163,14 +163,16 @@ suite('at-driver', () => {
     });
 
     test('rejects Command messages with omitted "id"', async () => {
-      websocket.send('{"method": "interaction.pressKeys", "params": {"keys": ["A"]}}');
+      websocket.send(
+        '{"method": "interaction.userIntent", "params": {"name": "pressKeys", "keys": ["A"]}}',
+      );
       const message = await Promise.race([whenClosed, nextMessage(websocket)]);
 
       assert.deepEqual(message, {
         id: null,
         error: 'unknown error',
         message:
-          'Command missing required "id": "{"method": "interaction.pressKeys", "params": {"keys": ["A"]}}".',
+          'Command missing required "id": "{"method": "interaction.userIntent", "params": {"name": "pressKeys", "keys": ["A"]}}".',
       });
     });
 
@@ -184,8 +186,10 @@ suite('at-driver', () => {
       });
     });
 
-    test('accepts valid "pressKey" Command', async () => {
-      websocket.send('{"id": 83, "method": "interaction.pressKeys", "params": {"keys": [" "]}}');
+    test('accepts valid "userIntent" Command', async () => {
+      websocket.send(
+        '{"id": 83, "method": "interaction.userIntent", "params": {"name": "pressKeys", "keys": [" "]}}',
+      );
       const message = await Promise.race([whenClosed, nextMessage(websocket)]);
 
       assert.deepEqual(message, {
@@ -194,9 +198,22 @@ suite('at-driver', () => {
       });
     });
 
-    test('rejects invalid "pressKey" Command', async () => {
+    test('rejects unrecognized user intent', async () => {
       websocket.send(
-        '{"id": 902, "method": "interaction.pressKeys", "params": {"keys": ["df daf% ?"]}}',
+        '{"id": 902, "method": "interaction.userIntent", "params": {"name": "press Key"}}',
+      );
+      const message = await Promise.race([whenClosed, nextMessage(websocket)]);
+
+      assert.deepEqual(message, {
+        id: 902,
+        error: 'unknown error',
+        message: 'unknown user intent',
+      });
+    });
+
+    test('rejects invalid "pressKeys" user intent', async () => {
+      websocket.send(
+        '{"id": 902, "method": "interaction.userIntent", "params": {"name": "pressKeys", "keys": ["df daf% ?"]}}',
       );
       const message = await Promise.race([whenClosed, nextMessage(websocket)]);
 
