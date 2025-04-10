@@ -30,6 +30,10 @@ extension AVAudioUnit {
                                                     componentManufacturer: manufacturer.fourCharCode!,
                                                     componentFlags: 0,
                                                     componentFlagsMask: 0)
+        let allComponents = AVAudioUnitComponentManager.shared().components(passingTest: { (_, _) in
+            return true
+        });
+        print(allComponents.map { "\($0.manufacturerName) - \($0.name)" }.joined(separator: "\n"))
         return AVAudioUnitComponentManager.shared().components(matching: description).first
     }
     
