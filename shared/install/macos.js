@@ -83,7 +83,7 @@ const promptForManualKeyPress = async () => {
  * @param {boolean} options.unattended - Whether installation should fail if
  *                                       human intervention is required
  *
- * @returns {Promise<void>}
+ * @returns {Promise<boolean>}
  */
 exports.install = async function ({ unattended }) {
   const options = await getExecOptions();
@@ -103,13 +103,14 @@ exports.install = async function ({ unattended }) {
   }
 
   if (await isInstalled()) {
-    throw new Error('Already installed');
+    return false;
   }
 
   await removeQuarantine(options);
   await registerExtensions(options);
   await enableExtension();
   await setSystemVoice(VOICE_IDENTIFIER);
+  return true;
 };
 
 /**
