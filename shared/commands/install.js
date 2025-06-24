@@ -1,6 +1,6 @@
 'use strict';
 
-const { loadOsModule } = require('../helpers/load-os-module');
+const { install } = require('../install/macos');
 
 module.exports = /** @type {import('yargs').CommandModule} */ ({
   command: 'install',
@@ -12,12 +12,8 @@ module.exports = /** @type {import('yargs').CommandModule} */ ({
     });
   },
   async handler({ unattended }) {
-    const installDelegate = loadOsModule('install', {
-      darwin: () => require('../install/macos'),
-      win32: () => require('../install/win32'),
-    });
-    await installDelegate.install({ unattended });
-
-    console.log('Installation completed successfully.');
+    const installed = await install({ unattended });
+    const result = installed ? 'Installation completed successfully.' : 'Already installed';
+    console.log(result);
   },
 });
