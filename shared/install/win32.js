@@ -10,6 +10,7 @@ const MAKE_VOICE_EXE = 'MakeVoice.exe';
 
 exports.install = async function () {
   await exec(`${MAKE_VOICE_EXE}`, await getExecOptions());
+  console.log('Installation completed successfully.');
 };
 
 exports.uninstall = async function () {

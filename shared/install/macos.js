@@ -103,13 +103,14 @@ exports.install = async function ({ unattended }) {
   }
 
   if (await isInstalled()) {
-    throw new Error('Already installed');
+    return console.log('Already installed.');
   }
 
   await removeQuarantine(options);
   await registerExtensions(options);
   await enableExtension();
   await setSystemVoice(VOICE_IDENTIFIER);
+  console.log('Installation completed successfully.');
 };
 
 /**
